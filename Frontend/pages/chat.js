@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-import { Paper, makeStyles, Grid, TextField, Button, Typography, colors } from "@material-ui/core/";
+import { Paper, makeStyles, Grid, TextField, Button, Typography, colors, CssBaseline } from "@material-ui/core/";
 
 import Layout from "../components/Layout";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import io from "socket.io-client";
 import { useForm } from "react-hook-form";
 //import useSWR from "swr";
@@ -21,7 +21,17 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: 70,
     //padding: 30,
     height: "100vh",
-    backgroundColor: colors.grey[50],
+    backgroundColor: "white",
+  },
+  text: {
+    wordWrap: "break-word",
+    whiteSpace: "pre-wrap",
+  },
+  textContainer: {
+    margin: 5,
+    padding: 7,
+    display: "inline-block",
+    maxWidth: "70%",
   },
   divider: {
     height: 1,
@@ -39,14 +49,19 @@ const useStyles = makeStyles((theme) => ({
 
 const Chat = () => {
   //const { data } = useSWR(`${API_END}/chat`);
-
-  const [received, setReceived] = useState([]);
-
-  const [sent, setSent] = useState([]);
-
   const classes = useStyles();
 
+  const [chat, setChat] = useState([]);
+
   const { register, handleSubmit, watch, errors } = useForm();
+
+  const messagesEndRef = useRef(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(scrollToBottom, [chat]);
 
   useEffect(() => {
     socket = io(API_END);
@@ -61,15 +76,15 @@ const Chat = () => {
   useEffect(() => {
     socket.on("sendMessage", (message) => {
       console.log("receive", message);
-      console.log("ara", received);
-      setReceived([...received, message]);
+
+      setChat([...chat, { type: "received", msg: message }]);
     });
-  }, [received]);
+  }, [chat]);
 
   const onSubmit = (data, e) => {
     console.log("send", data.input);
     socket.emit("message", data.input);
-    setSent([...sent, data.input]);
+    setChat([...chat, { type: "sent", msg: data.input }]);
     e.target.reset();
   };
 
@@ -80,18 +95,38 @@ const Chat = () => {
 
         <Grid item lg={4}>
           <div className={classes.container}>
-            <div style={{ padding: 10 }}>
-              {sent.map((msg, index) => (
-                <Typography key={index} variant="body1">
-                  <b>{msg}</b>
-                </Typography>
-              ))}
-
-              {received.map((msg, index) => (
-                <Typography key={index} variant="body1">
-                  {msg}
-                </Typography>
-              ))}
+            <div style={{ padding: 15, overflowY: "auto" }}>
+              {chat.length > 0 &&
+                chat.map((text, index) =>
+                  text.type === "received" ? (
+                    <div align="left">
+                      <Paper
+                        className={classes.textContainer}
+                        style={{ backgroundColor: colors.teal[500] }}
+                        align="left"
+                        key={index}
+                      >
+                        <Typography className={classes.text} style={{ color: "white" }} variant="body1">
+                          {text.msg}
+                        </Typography>
+                      </Paper>
+                    </div>
+                  ) : (
+                    <div align="right">
+                      <Paper
+                        className={classes.textContainer}
+                        style={{ backgroundColor: colors.grey[100] }}
+                        align="right"
+                        key={index}
+                      >
+                        <Typography className={classes.text} variant="body1">
+                          {text.msg}
+                        </Typography>
+                      </Paper>
+                    </div>
+                  )
+                )}
+              <div ref={messagesEndRef}></div>
             </div>
 
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -102,13 +137,14 @@ const Chat = () => {
                       autoComplete="off"
                       name="input"
                       margin="dense"
+                      multiline
                       inputRef={register}
                       placeholder="........."
                       fullWidth
                       variant="outlined"
                     />
                   </Grid>
-                  <Grid item lg={2}>
+                  <Grid item lg={2} align="center">
                     <Button type="submit" variant="contained" color="primary">
                       Send
                     </Button>
