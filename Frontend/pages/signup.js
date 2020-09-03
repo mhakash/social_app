@@ -1,13 +1,7 @@
 import Layout from "../components/Layout";
 import SignupForm from "../components/home/signupform";
 
-import {
-  Grid,
-  Typography,
-  Divider,
-  makeStyles,
-  colors,
-} from "@material-ui/core";
+import { Grid, Typography, Divider, makeStyles, colors } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -17,26 +11,28 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const About = () => {
+const SignUp = () => {
   const classes = useStyles();
 
   return (
     <Layout>
       <div>
         <Grid container>
-          <Grid item lg={3}></Grid>
-
+          <Grid item lg={3}>
+            {" "}
+          </Grid>
           <Grid item lg={6}>
             <div className={classes.container}>
               <SignupForm />
-            </div>
+            </div>{" "}
           </Grid>
-
-          <Grid item lg={3}></Grid>
-        </Grid>
-      </div>
+          <Grid item lg={3}>
+            {" "}
+          </Grid>{" "}
+        </Grid>{" "}
+      </div>{" "}
     </Layout>
   );
 };
 
-export default About;
+export default SignUp;

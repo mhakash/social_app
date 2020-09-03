@@ -4,21 +4,30 @@ const auth = require("../middleware/auth");
 
 const router = express.Router();
 router.get("/", (req, res) => {
-  res.status(200).sendFile("/signup.html", { root: "." });
+  res.status(200).sendFile("/signup.html", {
+    root: "."
+  });
 });
+
 router.get("/login", (req, res) => {
-  res.status(200).sendFile("/login.html", { root: "." });
+  res.status(200).sendFile("/login.html", {
+    root: "."
+  });
 });
-router.post("/users", async (req, res) => {
-  console.log("hi");
-  console.log(req.email, req.username, req.password);
+
+router.post("/users/signup", async (req, res) => {
+  //console.log("hi");
   console.log(req.body);
+  console.log(req.username, req.password);
   // Create a new user
   try {
     const user = new User(req.body);
     await user.save();
     const token = await user.generateAuthToken();
-    res.status(201).send({ user, token });
+    res.status(201).send({
+      user,
+      token
+    });
     //res.end("done");
   } catch (error) {
     console.log("mama error khaise ");
@@ -29,24 +38,36 @@ router.post("/users", async (req, res) => {
 router.post("/users/login", async (req, res) => {
   //Login a registered user
   try {
-    const { email, password } = req.body;
+    const {
+      email,
+      password
+    } = req.body;
     const user = await User.findByCredentials(email, password);
     if (!user) {
       return res
         .status(401)
-        .send({ error: "Login failed! Check authentication credentials" });
+        .send({
+          error: "Login failed! Check authentication credentials"
+        });
     }
     const token = await user.generateAuthToken();
     console.log(token);
-    res.send({ user, token });
+    res.send({
+      user,
+      token
+    });
   } catch (error) {
-    res.status(400).send({ error: error.message });
+    res.status(400).send({
+      error: error.message
+    });
   }
 });
 
 express().use(function (req, res, next) {
   if (!req.headers.authorization) {
-    return res.status(403).json({ error: "No credentials sent!" });
+    return res.status(403).json({
+      error: "No credentials sent!"
+    });
   }
   next();
 });

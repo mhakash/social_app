@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const server = "http://localhost:3001";
+const server = "http://localhost:5000/api";
 
 const SignupForm = () => {
   const classes = useStyles();
@@ -51,7 +51,7 @@ const SignupForm = () => {
       body: JSON.stringify(userInfo),
     };
 
-    const response = await fetch(server + "/api/POST", requestOptions);
+    const response = await fetch(server + "/users/signup", requestOptions);
     const TOKEN = await response.json();
     console.log("raw TOKEN", TOKEN);
 
@@ -92,21 +92,14 @@ const SignupForm = () => {
             label="Password"
             type="password"
           />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
+          <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
             Sign Up
           </Button>
         </form>
 
         <Typography align="center" variant="body1" style={{ marginTop: 20 }}>
-          You can provide your real information or make up any username to
-          remain anonymous. We just need you to sign up so that we can provide
-          you with our service.
+          You can provide your real information or make up any username to remain anonymous. We just need you to sign up
+          so that we can provide you with our service.
         </Typography>
       </div>
     </Container>
