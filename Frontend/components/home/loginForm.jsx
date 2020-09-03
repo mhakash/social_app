@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Link from "next/link";
 
 import Avatar from "@material-ui/core/Avatar";
@@ -10,6 +11,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 
 import { useForm } from "react-hook-form";
+import { useCookies } from "react-cookie";
+const server = "http://localhost:5000/api";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -32,12 +35,26 @@ const useStyles = makeStyles((theme) => ({
 
 const LoginForm = ({ handleClose }) => {
   const classes = useStyles();
-
+  const [cookies, setCookie] = useCookies();
   const { register, handleSubmit } = useForm();
+  const [loginError, setLoginError] = useState(false);
+  const onFormSubmit = async (data, e) => {
+    //console.log(data);
+    //console.log(cookies["token"]);
 
-  const onFormSubmit = (data, e) => {
-    console.log(data);
-    handleClose();
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json", token: cookies["token"] },
+      body: JSON.stringify(data),
+    };
+
+    const response = await fetch(server + "/users/login", requestOptions);
+    const { token, error } = await response.json();
+    //console.log(token);
+    if (token) setCookie("token", token, { path: "/" });
+    console.log(cookies["token"]);
+    if (error) setLoginError(true);
+    if (!error) handleClose();
   };
 
   return (
@@ -70,16 +87,10 @@ const LoginForm = ({ handleClose }) => {
             label="Password"
             type="password"
           />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
+          <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
             Log In
           </Button>
-
+          {loginError ? "Login failed" : null} <br />
           <Link href="/signup">
             <a>Don't have an account? Sign Up</a>
           </Link>

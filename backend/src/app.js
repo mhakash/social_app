@@ -7,7 +7,8 @@ const app = express();
 const server = require("http").createServer(app);
 const io = socketio(server);
 
-const userRouter = require("./routers/user");
+const userRoute = require("./routers/user");
+const postRoute = require('./routers/post')
 
 dotenv.config();
 require("./db/db");
@@ -19,16 +20,22 @@ app.use(
 );
 app.use(cors());
 app.use(express.json());
-app.use("/api", userRouter);
+
+app.use("/api/users", userRoute);
+app.use("/api/posts", postRoute);
 
 app.get("/api/chat", (req, res) => {
-  res.json({ id: 12345 });
+  res.json({
+    id: 12345
+  });
 });
 
 io.on("connection", (socket) => {
   console.log("a new user connected");
 
-  socket.on("join", ({ name }) => {
+  socket.on("join", ({
+    name
+  }) => {
     console.log(name);
     socket.join("1234");
   });
