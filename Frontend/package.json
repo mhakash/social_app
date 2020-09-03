@@ -1,0 +1,23 @@
+{
+  "name": "Tracthon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "next": "^9.5.2",
+    "react": "^16.13.1",
+    "react-cookie": "^4.0.3",
+    "react-dom": "^16.13.1",
+    "react-hook-form": "^6.6.0"
+  }
+}
