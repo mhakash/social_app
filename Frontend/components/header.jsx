@@ -56,6 +56,12 @@ const Header = () => {
 
             <Grid item lg={5}>
               <Box align="right">
+                <Link href="/chat">
+                  <Button align="right" color="inherit">
+                    Chat
+                  </Button>
+                </Link>
+
                 <Link href="/assistance">
                   <Button align="right" color="inherit">
                     Assistance
