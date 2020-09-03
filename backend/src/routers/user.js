@@ -17,8 +17,12 @@ router.get("/login", (req, res) => {
 
 router.post("/users/signup", async (req, res) => {
   //console.log("hi");
-  console.log(req.body);
-  console.log(req.username, req.password);
+  const {
+    username,
+    password
+  } = req.body
+  //console.log(req.body);
+  console.log(username, password);
   // Create a new user
   try {
     const user = new User(req.body);
