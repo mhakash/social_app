@@ -2,6 +2,9 @@
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
+  "/": "pages/index.js",
   "/chat": "pages/chat.js",
-  "/": "pages/index.js"
+  "/assistance": "pages/assistance.js",
+  "/about": "pages/about.js",
+  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js"
 }
