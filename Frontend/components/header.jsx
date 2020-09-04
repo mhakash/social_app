@@ -15,6 +15,7 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
+  colors,
 } from "@material-ui/core";
 import MuiLink from "@material-ui/core/Link";
 import LoginForm from "./home/loginForm";
@@ -63,16 +64,16 @@ const Header = () => {
 
   return (
     <React.Fragment>
-      <AppBar position="fixed">
+      <AppBar position="fixed" style={{ backgroundColor: colors.teal[500] }}>
         <Toolbar>
-          <Grid container>
+          <Grid container alignItems="center" style={{ marginTop: 20, marginBottom: 20 }}>
             <Grid item lg={1}></Grid>
 
             <Grid item lg={5}>
               <Link href="/">
-                <Typography variant="h4" className={classes.title}>
+                <Typography variant="h3" className={classes.title}>
                   <MuiLink href="#" color="inherit" underline="none">
-                    Social Harrassment
+                    প্রতিরোধ
                   </MuiLink>
                 </Typography>
               </Link>
@@ -82,32 +83,25 @@ const Header = () => {
               <Box align="right">
                 <Link href="/assistance">
                   <Button align="right" color="inherit">
-                    Assistance
+                    সহায়তা
                   </Button>
                 </Link>
 
                 <Link href="/">
                   <Button align="right" color="inherit">
-                    Home
+                    হোম
                   </Button>
                 </Link>
 
                 <Link href="/about">
                   <Button align="right" color="inherit">
-                    About
+                    অ্যাবাউট
                   </Button>
                 </Link>
 
-                {!currentUser ? (
-                  <Button align="right" color="inherit" onClick={handleClickOpen}>
-                    Login
-                  </Button>
-                ) : (
-                  <Button align="right" color="inherit" onClick={handleLogout}>
-                    Logout
-                  </Button>
-                )}
-                {currentUser ? currentUser : ""}
+                <Button align="right" color="inherit" onClick={handleClickOpen}>
+                  লগইন
+                </Button>
               </Box>
             </Grid>
 
@@ -131,3 +125,9 @@ const Header = () => {
 };
 
 export default Header;
+
+/*  <Link href="/chat">
+                  <Button align="right" color="inherit">
+                    Chat
+                  </Button>
+                </Link> */

@@ -1,14 +1,6 @@
 import Layout from "../components/Layout";
 
-import {
-  Grid,
-  Typography,
-  Divider,
-  makeStyles,
-  colors,
-} from "@material-ui/core";
-
-const server = "http://localhost:3001";
+import { Grid, Typography, Divider, makeStyles, colors } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -42,17 +34,13 @@ const About = ({ info }) => {
               <Typography variant="body1">{JSON.stringify(info)}</Typography>
 
               <Typography variant="body1">
-                This impressive paella is a perfect party dish and a fun meal to
-                cook together with your guests. Add 1 cup of frozen peas along
-                with the mussels, if you like. This impressive paella is a
-                perfect party dish and a fun meal to cook together with your
-                guests. Add 1 cup of frozen peas along with the mussels, if you
-                like. This impressive paella is a perfect party dish and a fun
-                meal to cook together with your guests. Add 1 cup of frozen peas
-                along with the mussels, if you like. This impressive paella is a
-                perfect party dish and a fun meal to cook together with your
-                guests. Add 1 cup of frozen peas along with the mussels, if you
-                like.
+                This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1
+                cup of frozen peas along with the mussels, if you like. This impressive paella is a perfect party dish
+                and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if
+                you like. This impressive paella is a perfect party dish and a fun meal to cook together with your
+                guests. Add 1 cup of frozen peas along with the mussels, if you like. This impressive paella is a
+                perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with
+                the mussels, if you like.
               </Typography>
             </div>
           </Grid>
@@ -62,12 +50,6 @@ const About = ({ info }) => {
       </div>
     </Layout>
   );
-};
-
-About.getInitialProps = async () => {
-  const response = await fetch(server + "/api/GET");
-  const data = await response.json();
-  return { info: data };
 };
 
 export default About;

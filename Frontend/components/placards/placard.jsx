@@ -35,12 +35,12 @@ const Placard = ({ title }) => {
 
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          {bull} well meaning and kindly. a benevolent smile...
+          {bull} এখানে হাইলাইটেড পয়েন্টটি দেখানো হবে......
         </Typography>
       </CardContent>
 
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button size="small">আরও জানুন</Button>
       </CardActions>
     </Card>
   );
