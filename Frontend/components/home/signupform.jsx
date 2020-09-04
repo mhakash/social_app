@@ -52,14 +52,13 @@ const SignupForm = () => {
     };
 
     const response = await fetch(server + "/users/signup", requestOptions);
-    const TOKEN = await response.json();
+    const data = await response.json();
+    const TOKEN = data.token;
     console.log("raw TOKEN", TOKEN);
-
-    setCookie("token", TOKEN.token, { path: "/" });
-
+    //console.log(data);
+    setCookie("token", TOKEN, { path: "/" });
     Router.push("/");
-
-    console.log("TOKEN from cookies", cookies.token);
+    console.log("TOKEN from cookies", cookies["token"]);
   };
 
   return (

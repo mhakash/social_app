@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
+import { useCookies } from "react-cookie";
 import {
   AppBar,
   Toolbar,
@@ -18,6 +19,7 @@ import {
 } from "@material-ui/core";
 import MuiLink from "@material-ui/core/Link";
 import LoginForm from "./home/loginForm";
+import Router from "next/router";
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -29,13 +31,35 @@ const Header = () => {
   const classes = useStyles();
 
   const [open, setOpen] = React.useState(false);
-
+  const [cookies, setCookie, removeCookie] = useCookies();
+  const [currentUser, setCurrentUser] = React.useState(null);
   const handleClickOpen = () => {
     setOpen(true);
   };
 
-  const handleClose = () => {
+  React.useEffect(() => {
+    const token = cookies["token"];
+    const fetchData = async () => {
+      const requestOptions = {
+        method: "GET",
+        headers: { "Content-Type": "application/json", token },
+      };
+      const res = await fetch("http://localhost:5000/api/users/me", requestOptions);
+      const data = await res.json();
+      const { error, name } = data;
+      if (name) setCurrentUser(name);
+    };
+    if (token) fetchData();
+  }, [cookies["token"]]);
+
+  const handleClose = async () => {
     setOpen(false);
+  };
+
+  const handleLogout = () => {
+    //console.log(cookies["token"]);
+    removeCookie("token");
+    setCurrentUser(null);
   };
 
   return (
@@ -92,7 +116,7 @@ const Header = () => {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
-            Cancel
+            cancel
           </Button>
         </DialogActions>
       </Dialog>

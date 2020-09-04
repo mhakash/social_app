@@ -15,7 +15,7 @@ router.get("/login", (req, res) => {
   });
 });
 
-router.post("/users/signup", async (req, res) => {
+router.post("/signup", async (req, res) => {
   //console.log("hi");
   const {
     username,
@@ -25,7 +25,10 @@ router.post("/users/signup", async (req, res) => {
   console.log(username, password);
   // Create a new user
   try {
-    const user = new User(req.body);
+    const user = new User({
+      name: username,
+      password
+    });
     await user.save();
     const token = await user.generateAuthToken();
     res.status(201).send({
@@ -34,35 +37,36 @@ router.post("/users/signup", async (req, res) => {
     });
     //res.end("done");
   } catch (error) {
-    console.log("mama error khaise ");
+    console.log(error);
     res.status(400).send(error);
   }
 });
 
-router.post("/users/login", async (req, res) => {
+router.post("/login", async (req, res) => {
   //Login a registered user
+  //console.log(req.headers.token)
   try {
     const {
-      email,
+      username,
       password
     } = req.body;
-    const user = await User.findByCredentials(email, password);
+    const user = await User.findByCredentials(username, password);
     if (!user) {
       return res
-        .status(401)
+        .status(200)
         .send({
           error: "Login failed! Check authentication credentials"
         });
     }
     const token = await user.generateAuthToken();
-    console.log(token);
+    //console.log(token);
     res.send({
       user,
       token
     });
   } catch (error) {
-    res.status(400).send({
-      error: error.message
+    res.status(200).send({
+      error: 'not found'
     });
   }
 });
@@ -76,9 +80,9 @@ express().use(function (req, res, next) {
   next();
 });
 
-router.get("/users/me", auth, async (req, res) => {
+router.get("/me", auth, async (req, res) => {
   // View logged in user profile
-  res.send(req.user);
+  res.json(req.user);
 });
 
 router.post("/users/me/logout", auth, async (req, res) => {
