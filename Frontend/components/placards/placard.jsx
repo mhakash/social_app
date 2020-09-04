@@ -7,6 +7,7 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import Divider from "@material-ui/core/Divider";
 
 import { useEffect } from "react";
 
@@ -37,11 +38,11 @@ const Placard = ({ title }) => {
 
   useEffect(() => {
     if (title === "আপনি জানেন কি?") {
-      setHighlight("আপনি জানেন কি?");
+      setHighlight("হলের বড় ভাইরা ঠাট্টা মশকরার নামে আপনাকে হ্যারাস....");
     } else if (title === "FAQ") {
-      setHighlight("FAQ");
+      setHighlight("প্রশ্নঃ আমি আমার স্বামীর কাছে শারীরিক নির্যাতনের....");
     } else {
-      setHighlight("বাংলাদেশে আইনে মানহানি একই সঙ্গে দেওয়ানি...");
+      setHighlight("বাংলাদেশে আইনে মানহানি একই সঙ্গে দেওয়ানি....");
     }
   });
 
@@ -58,6 +59,8 @@ const Placard = ({ title }) => {
   return (
     <Card className={classes.root}>
       <CardHeader title={title} />
+
+      <Divider />
 
       <CardContent>
         <Typography variant="body2" component="p">
