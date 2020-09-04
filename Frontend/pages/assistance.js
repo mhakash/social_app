@@ -107,8 +107,8 @@ const Assistance = () => {
                       onChange={handleChange}
                       className={classes.tabs}
                     >
-                      <Tab label="Book Appointment" {...a11yProps(0)} />
-                      <Tab label="Start Appointment" {...a11yProps(1)} />
+                      <Tab label="সাক্ষাতকার ঠিক করুন" {...a11yProps(0)} />
+                      <Tab label="যোগাযোগ শুরু করুন" {...a11yProps(1)} />
                     </Tabs>
                   </Grid>
 

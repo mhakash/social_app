@@ -8,6 +8,7 @@ import Avatar from "@material-ui/core/Avatar";
 import { red } from "@material-ui/core/colors";
 import TextField from "@material-ui/core/TextField";
 import { colors } from "@material-ui/core";
+import Divider from "@material-ui/core/Divider";
 
 import { useForm } from "react-hook-form";
 import { useCookies } from "react-cookie";
@@ -82,6 +83,8 @@ const PostForm = () => {
     <Card className={classes.root}>
       <CardHeader avatar={<Avatar className={classes.avatar}>আ</Avatar>} title="আপনি" />
 
+      <Divider variant="middle" />
+
       <form onSubmit={handleSubmit(onSubmit)}>
         <CardContent>
           <TextField
@@ -94,9 +97,10 @@ const PostForm = () => {
             variant="outlined"
           />
         </CardContent>
-        <Checkbox name="anonymous" inputRef={register} disabled={!loggedIn} />
-        উসারনেম গোপন থাকবে
-        <CardActions>
+
+        <CardActions disableSpacing>
+          <Checkbox name="anonymous" inputRef={register} disabled={!loggedIn} />
+          ইউসারনেম গোপন থাকবে
           <Button type="submit" className={classes.share} disabled={!loggedIn}>
             {loggedIn ? "শেয়ার" : ""}
           </Button>

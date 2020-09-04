@@ -10,7 +10,7 @@ const EnterMeeting = () => {
   return (
     <Grid container align="center" direction="column" alignItems="center" spacing={3}>
       <Grid item>
-        <Typography variant="h6">Please enter your coupon code to start the meeting</Typography>
+        <Typography variant="h6">সাক্ষাতকার শুরু করার জন্য কুপন কোডটি প্রবেশ করুন</Typography>
       </Grid>
 
       <Grid item>
@@ -25,13 +25,13 @@ const EnterMeeting = () => {
       <Grid item>
         <Link href="/chat">
           <Button variant="contained" color="secondary">
-            Enter
+            প্রবেশ
           </Button>
         </Link>
       </Grid>
 
       <Grid item>
-        <Typography variant="body2">Don't have a coupon code? Book an Appoinment</Typography>
+        <Typography variant="body2">কুপন কোড নেই? সাক্ষাতকার ঠিক করুন</Typography>
       </Grid>
     </Grid>
   );

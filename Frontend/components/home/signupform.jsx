@@ -75,7 +75,7 @@ const SignupForm = () => {
           <LockOutlinedIcon />
         </Avatar>
 
-        <Typography variant="h5">Sign Up</Typography>
+        <Typography variant="h5">অ্যাকাউন্ট খুলুন</Typography>
 
         <form className={classes.form} onSubmit={handleSubmit(onFormSubmit)}>
           <TextField
@@ -85,7 +85,7 @@ const SignupForm = () => {
             required
             fullWidth
             name="username"
-            label="Username"
+            label="ইউসারনেম"
           />
           <TextField
             inputRef={register}
@@ -94,18 +94,18 @@ const SignupForm = () => {
             required
             fullWidth
             name="password"
-            label="Password"
+            label="পাসওয়ার্ড"
             type="password"
           />
           {error ? "error occured" : null}
           <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
-            Sign Up
+            সাইন আপ
           </Button>
         </form>
 
         <Typography align="center" variant="body1" style={{ marginTop: 20 }}>
-          You can provide your real information or make up any username to remain anonymous. We just need you to sign up
-          so that we can provide you with our service.
+          আপনি আপনার আসল নাম ব্যবহার করতে পারেন অথবা ছদ্মনাম ব্যবহার করতে পারেন। আপনার সাহায্যের জন্যই এই তথ্যটুকু
+          প্রয়োজন।
         </Typography>
       </div>
     </Container>
