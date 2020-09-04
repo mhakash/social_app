@@ -98,10 +98,15 @@ const Header = () => {
                     অ্যাবাউট
                   </Button>
                 </Link>
-
-                <Button align="right" color="inherit" onClick={handleClickOpen}>
-                  লগইন
-                </Button>
+                {!currentUser ? (
+                  <Button align="right" color="inherit" onClick={handleClickOpen}>
+                    লগইন
+                  </Button>
+                ) : (
+                  <Button align="right" color="inherit" onClick={handleLogout}>
+                    লগআউট
+                  </Button>
+                )}
               </Box>
             </Grid>
 
