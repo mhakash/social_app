@@ -207,7 +207,7 @@ const Header = () => {
 
             <Divider classes={{ root: classes.divider }} />
 
-            <Link href="/assistance">
+            <Link href="/know">
               <ListItem button color="inherit">
                 আপনি জানেন কি?
               </ListItem>
@@ -215,7 +215,7 @@ const Header = () => {
 
             <Divider classes={{ root: classes.divider }} />
 
-            <Link href="/assistance">
+            <Link href="/faq">
               <ListItem button color="inherit">
                 FAQ
               </ListItem>
@@ -223,7 +223,7 @@ const Header = () => {
 
             <Divider classes={{ root: classes.divider }} />
 
-            <Link href="/assistance">
+            <Link href="/law">
               <ListItem button color="inherit">
                 আইন জানুন
               </ListItem>

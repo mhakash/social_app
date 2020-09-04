@@ -148,7 +148,7 @@ const Post = ({ post }) => {
         <Divider />
         <CardContent>
           {post.comments
-            ? post.comments.map((comment) => {
+            ? post.comments.map((comment, index) => {
                 return (
                   <React.Fragment>
                     <Grid container key={comment._id} style={{ marginBottom: 10 }}>
@@ -164,7 +164,9 @@ const Post = ({ post }) => {
                       </Grid>
                       <Grid item xs={11}>
                         <Typography>
-                          {<b>{comment.author}</b>} {comment.content}
+                          {<b>{comment.author}</b>}{" "}
+                          {index === 0 ? <text style={{ color: colors.grey[600] }}>[Expert] </text> : null}
+                          {comment.content}
                         </Typography>
                       </Grid>
                     </Grid>
