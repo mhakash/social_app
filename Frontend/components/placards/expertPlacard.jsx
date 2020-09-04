@@ -11,6 +11,10 @@ import Typography from "@material-ui/core/Typography";
 const useStyles = makeStyles({
   root: {
     margin: 20,
+    ["@media (max-width:600px)"]: {
+      margin: 0,
+      marginBottom: 10,
+    },
   },
   bullet: {
     display: "inline-block",
@@ -39,19 +43,13 @@ const ExpertPlacard = () => {
           নিতে পারেন।
           <br />
           <br />
-          যোগাযোগের মাধ্যম আপনিই ঠিক করুন,
+          যেভাবে স্বাচ্ছন্দ্য বোধ করবেন সেভাবে যোগাযোগের মাধ্যম আপনিই ঠিক করুন,
           <br />
           -চ্যাট
           <br />
           -ভয়েস কল
           <br />
           -ভিডিও কনফারেন্স
-          <br />
-          যেটাতে স্বাচ্ছন্দ্য বোধ করবেন।
-          <br />
-          <br />
-          উপযুক্ত এক্সপার্টের সাথে আপনার যোগাযোগের জন্য আপনার সমস্যা, যোগাযোগের উপযুক্ত সময় ও যে ধরনের সাহায্য চান তার
-          একটি ফর্ম পূরণ করুন।
         </Typography>
       </CardContent>
 

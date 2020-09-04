@@ -35,6 +35,8 @@ const Feed = () => {
       <Divider classes={{ root: classes.divider }} />
       {data ? data.posts.map((post) => <Post post={post} key={post._id} />) : ""}
       <Post post={{ content: testContent, author: "testuser" }} />
+      <Post post={{ content: testContent, author: "testuser" }} />
+      <Post post={{ content: testContent, author: "testuser" }} />
     </React.Fragment>
   );
 };

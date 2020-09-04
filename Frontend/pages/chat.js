@@ -91,9 +91,9 @@ const Chat = () => {
   return (
     <Layout>
       <Grid container>
-        <Grid item lg={4}></Grid>
+        <Grid item lg={4} xs={0}></Grid>
 
-        <Grid item lg={4}>
+        <Grid item lg={4} xs={12}>
           <div className={classes.container}>
             <div style={{ padding: 15, overflowY: "auto" }}>
               {chat.length > 0 &&
@@ -132,7 +132,7 @@ const Chat = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <Paper square elevation={5} style={{ padding: 20, backgroundColor: "white" }}>
                 <Grid container alignItems="center" spacing={1}>
-                  <Grid item lg={10}>
+                  <Grid item xs={10}>
                     <TextField
                       autoComplete="off"
                       name="input"
@@ -144,7 +144,7 @@ const Chat = () => {
                       variant="outlined"
                     />
                   </Grid>
-                  <Grid item lg={2} align="center">
+                  <Grid item xs={2} align="center">
                     <Button type="submit" variant="contained" color="primary">
                       সেন্ড
                     </Button>
@@ -157,7 +157,7 @@ const Chat = () => {
           </div>
         </Grid>
 
-        <Grid item lg={4}></Grid>
+        <Grid item lg={4} xs={0}></Grid>
       </Grid>
     </Layout>
   );

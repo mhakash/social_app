@@ -117,8 +117,8 @@ const Post = ({ post }) => {
       </CardContent>
 
       <CardActions disableSpacing>
-        <IconButton>
-          <FavoriteIcon />
+        <IconButton onClick={() => setLiked(true)}>
+          {liked ? <FavoriteIcon style={{ color: red[500] }} /> : <FavoriteIcon />}
         </IconButton>
 
         <IconButton style={{ marginLeft: "auto" }} onClick={handleExpandClick} aria-expanded={expanded}>
