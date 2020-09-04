@@ -93,7 +93,9 @@ const CompletedStep = ({ formData }) => {
   return (
     <div>
       <h1 align="center">Completed!</h1>
-      <Typography variant="body1">{JSON.stringify(formData)}</Typography>
+      <Typography align="center" variant="body1">
+        Your token is 234234
+      </Typography>
     </div>
   );
 };
