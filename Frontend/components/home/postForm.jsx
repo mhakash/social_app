@@ -35,17 +35,14 @@ const PostForm = () => {
 
   return (
     <Card className={classes.root}>
-      <CardHeader
-        avatar={<Avatar className={classes.avatar}>R</Avatar>}
-        title="You"
-      />
+      <CardHeader avatar={<Avatar className={classes.avatar}>R</Avatar>} title="আপনি" />
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <CardContent>
           <TextField
             name="postContent"
             inputRef={register}
-            placeholder="Share your story with the community..."
+            placeholder="আপনার গল্পটি শেয়ার করূন......"
             fullWidth
             multiline
             variant="outlined"
@@ -54,7 +51,7 @@ const PostForm = () => {
 
         <CardActions>
           <Button type="submit" className={classes.share}>
-            Share
+            শেয়ার
           </Button>
         </CardActions>
       </form>

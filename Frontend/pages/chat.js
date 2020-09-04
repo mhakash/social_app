@@ -146,7 +146,7 @@ const Chat = () => {
                   </Grid>
                   <Grid item lg={2} align="center">
                     <Button type="submit" variant="contained" color="primary">
-                      Send
+                      সেন্ড
                     </Button>
                   </Grid>
                 </Grid>

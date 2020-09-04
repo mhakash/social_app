@@ -18,7 +18,7 @@ const Feed = () => {
   return (
     <React.Fragment>
       <Typography variant="h5" color="textSecondary">
-        Community
+        কমিউনিটি
       </Typography>
 
       <Divider classes={{ root: classes.divider }} />

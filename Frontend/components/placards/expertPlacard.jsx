@@ -31,21 +31,33 @@ const ExpertPlacard = () => {
 
   return (
     <Card className={classes.root}>
-      <CardHeader title="Talk with an Expert" />
+      <CardHeader title="অভিজ্ঞ ব্যাক্তির সাথে কথা বলুন" />
 
       <CardContent>
         <Typography variant="body2" component="p">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the
-          mussels, if you like. This impressive paella is a perfect party dish
-          and a fun meal to cook together with your guests. Add 1 cup of frozen
-          peas along with the mussels, if you like.
+          আপনার সমস্যাটির এক্সপার্ট মতামতের জন্য অভিজ্ঞ ব্যাক্তির সাথে কথা বলুন। আপনি চাইলে পরিচয় গোপন রেখেই পরামর্শ
+          নিতে পারেন।
+          <br />
+          <br />
+          যোগাযোগের মাধ্যম আপনিই ঠিক করুন,
+          <br />
+          -চ্যাট
+          <br />
+          -ভয়েস কল
+          <br />
+          -ভিডিও কনফারেন্স
+          <br />
+          যেটাতে স্বাচ্ছন্দ্য বোধ করবেন।
+          <br />
+          <br />
+          উপযুক্ত এক্সপার্টের সাথে আপনার যোগাযোগের জন্য আপনার সমস্যা, যোগাযোগের উপযুক্ত সময় ও যে ধরনের সাহায্য চান তার
+          একটি ফর্ম পূরণ করুন।
         </Typography>
       </CardContent>
 
       <CardActions>
         <Link href="/assistance">
-          <Button size="small">Learn More</Button>
+          <Button size="small">আরও জানুন</Button>
         </Link>
       </CardActions>
     </Card>

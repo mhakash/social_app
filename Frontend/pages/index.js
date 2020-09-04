@@ -14,12 +14,12 @@ const useStyles = makeStyles({
     //zIndex: 1,
     //left: 0,
     //backgroundColor: "#eee",
-    paddingTop: 60,
+    paddingTop: 90,
     overflowY: "auto",
   },
 
   feed: {
-    paddingTop: 80,
+    paddingTop: 110,
     marginLeft: 2,
     marginRight: 2,
   },
@@ -49,9 +49,9 @@ const Index = () => {
 
         <Grid item lg={3}>
           <div className={classes.sideNav}>
-            <Placard title="Did you know?" />
+            <Placard title="আপনি জানেন কি?" />
             <Placard title="FAQ" />
-            <Placard title="Know the Law" />
+            <Placard title="আইন জানুন" />
           </div>
         </Grid>
 
