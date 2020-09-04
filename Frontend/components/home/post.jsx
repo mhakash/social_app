@@ -8,11 +8,14 @@ import Collapse from "@material-ui/core/Collapse";
 import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
+import TextField from "@material-ui/core/TextField";
 import { red } from "@material-ui/core/colors";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
+import { useForm } from "react-hook-form";
+import { useCookies } from "react-cookie";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,12 +37,29 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Post = () => {
+const Post = ({ post }) => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
+  const { register, handleSubmit } = useForm();
+  const [cookies, setCookie, removeCookie] = useCookies();
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
+  };
+
+  const handleCommentSubmit = async (data, e) => {
+    console.log(data, post._id);
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json", token: cookies["token"] },
+      body: JSON.stringify({ comment: data.comment, _id: post._id }),
+    };
+    const res = await fetch("http://localhost:5000/api/posts/comment", requestOptions);
+    const dataBack = await res.json();
+    //const { error, name } = dataBack;
+    console.log(dataBack);
+    e.preventDefault();
+    e.target.reset();
   };
 
   return (
@@ -51,17 +71,13 @@ const Post = () => {
             <MoreVertIcon />
           </IconButton>
         }
-        title="স্বাধীন"
+        title={post.author}
         subheader="September ১৪, ২০১৬"
       />
 
       <CardContent>
         <Typography variant="body2" component="p">
-          আমার সঙ্গে যখন ওই ভাষায় অনলাইন চ্যাট হতো, আমি পিডোফেলিয়া শব্দটির সঙ্গে পরিচিত ছিলাম না। এবং ভাবতাম উনি একমাত্র
-          আমাকেই এসব বলছেন। এত বছর পর আমার যে সমস্ত বন্ধুবান্ধব এই ঘটনার কথা জানত, তারা আমায় মুখ খুলতে বলে। আমি পুলিশে
-          অভিযোগ জানাব, বা আদালতে লড়ব, সে সব ভাবিইনি। সমাজে ওঁর যথেষ্ট প্রভাব প্রতিপত্তি রয়েছে। আইনি পথে লড়লে ওঁর কীই বা
-          শাস্তি হবে? কিন্তু সোশ্যাল মিডিয়ায় এত মানুষ যে ওঁর এই দিকগুলো সম্পর্কে জানতে পারছেন, ওঁর এত বছর ধরে একটু একটু
-          করে গড়ে তোলা ভাবমূর্তি ধ্বসে পড়ছে, এটাই সবচেয়ে বড় শাস্তি।
+          {post.content}
         </Typography>
       </CardContent>
 
@@ -83,10 +99,26 @@ const Post = () => {
 
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>
-            Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10 minutes.
-          </Typography>
-          <Typography>Set aside off of the heat to let rest for 10 minutes, and then serve.</Typography>
+          {post.comments
+            ? post.comments.map((comment) => {
+                return (
+                  <li key={comment._id}>
+                    {comment.author} {"->"} {comment.content}
+                  </li>
+                );
+              })
+            : null}
+          <form onSubmit={handleSubmit(handleCommentSubmit)}>
+            <TextField
+              inputRef={register}
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="comment"
+              label="comment"
+            />
+          </form>
         </CardContent>
       </Collapse>
     </Card>

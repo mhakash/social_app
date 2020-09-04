@@ -12,6 +12,7 @@ import { useForm } from "react-hook-form";
 import { useCookies } from "react-cookie";
 import { useEffect } from "react";
 import { useState } from "react";
+import { Checkbox } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -56,7 +57,7 @@ const PostForm = () => {
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json", token: cookies["token"] },
-      body: JSON.stringify({ post: data.postContent }),
+      body: JSON.stringify({ post: data.postContent, anonymous: data.anonymous }),
     };
     const res = await fetch("http://localhost:5000/api/posts/add", requestOptions);
     const resData = await res.json();
@@ -80,11 +81,13 @@ const PostForm = () => {
             variant="outlined"
           />
         </CardContent>
-
+        <Checkbox name="anonymous" inputRef={register} disabled={!loggedIn} />
+        post anonymously
         <CardActions>
-          <Button type="submit" className={classes.share}>
-            শেয়ার
+          <Button type="submit" className={classes.share} disabled={!loggedIn}>
+            {loggedIn ? "শেয়ার" : ""}
           </Button>
+          {loggedIn ? "" : "শেয়ার করতে লগইন করুন"}
         </CardActions>
       </form>
     </Card>

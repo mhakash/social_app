@@ -12,6 +12,7 @@ import Container from "@material-ui/core/Container";
 import { useForm } from "react-hook-form";
 
 import { useCookies } from "react-cookie";
+import { useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -39,7 +40,7 @@ const SignupForm = () => {
   const classes = useStyles();
 
   const [cookies, setCookie] = useCookies();
-
+  const [error, setError] = useState(false);
   const { register, handleSubmit } = useForm();
 
   const onFormSubmit = async (userInfo, e) => {
@@ -53,12 +54,17 @@ const SignupForm = () => {
 
     const response = await fetch(server + "/users/signup", requestOptions);
     const data = await response.json();
-    const TOKEN = data.token;
-    console.log("raw TOKEN", TOKEN);
-    //console.log(data);
-    setCookie("token", TOKEN, { path: "/" });
-    Router.push("/");
-    console.log("TOKEN from cookies", cookies["token"]);
+    const { token, error } = data;
+
+    if (error) {
+      setError(true);
+    } else {
+      console.log("raw TOKEN", token);
+      //console.log(data);
+      setCookie("token", token, { path: "/" });
+      Router.push("/");
+      console.log("TOKEN from cookies", cookies["token"]);
+    }
   };
 
   return (
@@ -91,6 +97,7 @@ const SignupForm = () => {
             label="Password"
             type="password"
           />
+          {error ? "error occured" : null}
           <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
             Sign Up
           </Button>
