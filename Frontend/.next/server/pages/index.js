@@ -131,7 +131,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./header */ "./components/header.jsx");
 /* harmony import */ var react_cookie__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-cookie */ "react-cookie");
 /* harmony import */ var react_cookie__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_cookie__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "D:\\Reading stuffs\\Sketches\\Brac\\social_app\\Frontend\\components\\Layout.js";
+var _jsxFileName = "D:\\Reading stuffs\\Sketches\\New folder\\social_app\\Frontend\\components\\Layout.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -197,7 +197,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Link */ "@material-ui/core/Link");
 /* harmony import */ var _material_ui_core_Link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Link__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _home_loginForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./home/loginForm */ "./components/home/loginForm.jsx");
-var _jsxFileName = "D:\\Reading stuffs\\Sketches\\Brac\\social_app\\Frontend\\components\\header.jsx";
+var _jsxFileName = "D:\\Reading stuffs\\Sketches\\New folder\\social_app\\Frontend\\components\\header.jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -461,7 +461,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/colors */ "@material-ui/core/colors");
 /* harmony import */ var _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_colors__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "D:\\Reading stuffs\\Sketches\\Brac\\social_app\\Frontend\\components\\home\\feed.jsx";
+var _jsxFileName = "D:\\Reading stuffs\\Sketches\\New folder\\social_app\\Frontend\\components\\home\\feed.jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -577,7 +577,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Container__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var react_hook_form__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-hook-form */ "react-hook-form");
 /* harmony import */ var react_hook_form__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react_hook_form__WEBPACK_IMPORTED_MODULE_10__);
-var _jsxFileName = "D:\\Reading stuffs\\Sketches\\Brac\\social_app\\Frontend\\components\\home\\loginForm.jsx";
+var _jsxFileName = "D:\\Reading stuffs\\Sketches\\New folder\\social_app\\Frontend\\components\\home\\loginForm.jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -784,7 +784,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_ExpandMore__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_ExpandMore__WEBPACK_IMPORTED_MODULE_14__);
 /* harmony import */ var _material_ui_icons_MoreVert__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @material-ui/icons/MoreVert */ "@material-ui/icons/MoreVert");
 /* harmony import */ var _material_ui_icons_MoreVert__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_MoreVert__WEBPACK_IMPORTED_MODULE_15__);
-var _jsxFileName = "D:\\Reading stuffs\\Sketches\\Brac\\social_app\\Frontend\\components\\home\\post.jsx";
+var _jsxFileName = "D:\\Reading stuffs\\Sketches\\New folder\\social_app\\Frontend\\components\\home\\post.jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -998,7 +998,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var react_hook_form__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-hook-form */ "react-hook-form");
 /* harmony import */ var react_hook_form__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react_hook_form__WEBPACK_IMPORTED_MODULE_10__);
-var _jsxFileName = "D:\\Reading stuffs\\Sketches\\Brac\\social_app\\Frontend\\components\\home\\postForm.jsx";
+var _jsxFileName = "D:\\Reading stuffs\\Sketches\\New folder\\social_app\\Frontend\\components\\home\\postForm.jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -1139,7 +1139,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Typography */ "@material-ui/core/Typography");
 /* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8__);
-var _jsxFileName = "D:\\Reading stuffs\\Sketches\\Brac\\social_app\\Frontend\\components\\placards\\expertPlacard.jsx";
+var _jsxFileName = "D:\\Reading stuffs\\Sketches\\New folder\\social_app\\Frontend\\components\\placards\\expertPlacard.jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -1325,7 +1325,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Typography */ "@material-ui/core/Typography");
 /* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8__);
-var _jsxFileName = "D:\\Reading stuffs\\Sketches\\Brac\\social_app\\Frontend\\components\\placards\\placard.jsx";
+var _jsxFileName = "D:\\Reading stuffs\\Sketches\\New folder\\social_app\\Frontend\\components\\placards\\placard.jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -3474,7 +3474,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_placards_expertPlacard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/placards/expertPlacard */ "./components/placards/expertPlacard.jsx");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__);
-var _jsxFileName = "D:\\Reading stuffs\\Sketches\\Brac\\social_app\\Frontend\\pages\\index.js";
+var _jsxFileName = "D:\\Reading stuffs\\Sketches\\New folder\\social_app\\Frontend\\pages\\index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 

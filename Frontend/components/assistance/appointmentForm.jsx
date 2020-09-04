@@ -9,8 +9,6 @@ import SecondStep from "./secondStep";
 
 import { Typography } from "@material-ui/core";
 
-const server = "http://localhost:3001";
-
 class AppointmentForm extends Component {
   static propTypes = {
     cookies: instanceOf(Cookies).isRequired,
@@ -26,6 +24,7 @@ class AppointmentForm extends Component {
   };
 
   handleStepChange = async (step) => {
+    /*
     const { cookies } = this.props;
     const token = cookies.get("token");
     console.log("Token from cookies in appointment form", token);
@@ -38,6 +37,7 @@ class AppointmentForm extends Component {
     const response = await fetch(server + "/api/CLICK", requestOptions);
     const reply = await response.json();
     console.log("msg from server", reply.msg);
+    */
 
     this.setState({ step: step });
   };
@@ -47,14 +47,7 @@ class AppointmentForm extends Component {
   };
 
   render() {
-    const {
-      step,
-      assistanceType,
-      category,
-      description,
-      meetingType,
-      meetingTime,
-    } = this.state;
+    const { step, assistanceType, category, description, meetingType, meetingTime } = this.state;
 
     const values = {
       assistanceType,
@@ -66,12 +59,7 @@ class AppointmentForm extends Component {
 
     switch (step) {
       case 0:
-        return (
-          <AssistanceType
-            setStep={this.handleStepChange}
-            setFormData={this.handleFormDataChange}
-          />
-        );
+        return <AssistanceType setStep={this.handleStepChange} setFormData={this.handleFormDataChange} />;
 
       case 1:
         return (
@@ -103,7 +91,7 @@ const CompletedStep = ({ formData }) => {
   return (
     <div>
       <h1 align="center">Completed!</h1>
-      <Typography variant="body1">{JSON.stringify(formData)}</Typography>
+      <Typography variant="body1">Your meeting token is 2342352</Typography>
     </div>
   );
 };
