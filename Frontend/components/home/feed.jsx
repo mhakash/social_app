@@ -28,7 +28,7 @@ const Feed = () => {
 
   return (
     <React.Fragment>
-      <Typography variant="h5" color="textSecondary">
+      <Typography variant="h5" color="textSecondary" style={{ marginTop: 20 }}>
         কমিউনিটি
       </Typography>
       {/* {error ? "error" : data.posts.toString()} */}

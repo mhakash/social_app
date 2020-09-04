@@ -1,12 +1,4 @@
-import {
-  Button,
-  Typography,
-  FormControl,
-  Grid,
-  RadioGroup,
-  Radio,
-  FormControlLabel,
-} from "@material-ui/core";
+import { Button, Typography, FormControl, Grid, RadioGroup, Radio, FormControlLabel } from "@material-ui/core";
 
 const SecondStep = ({ time, type, setStep, setFormData }) => {
   const handleMeetingTypeChange = (event) => {
@@ -19,59 +11,37 @@ const SecondStep = ({ time, type, setStep, setFormData }) => {
 
   return (
     <React.Fragment>
-      <Typography variant="h5">Step 2</Typography>
+      <Typography variant="h5">দ্বিতীয় ধাপ</Typography>
 
       <div style={{ marginTop: 10 }}>
-        <Typography variant="body1">Please select a meeting type:</Typography>
+        <Typography variant="body1">সাক্ষাতের ধরন ঠিক করুন:</Typography>
 
         <FormControl>
           <RadioGroup value={type} onChange={handleMeetingTypeChange}>
             <Grid container>
               <Grid item>
-                <FormControlLabel
-                  value="text"
-                  control={<Radio />}
-                  label="Text Messaging"
-                />
+                <FormControlLabel value="text" control={<Radio />} label="চ্যাট" />
               </Grid>
               <Grid item>
-                <FormControlLabel
-                  value="voice"
-                  control={<Radio />}
-                  label="Voice Call"
-                />
+                <FormControlLabel value="voice" control={<Radio />} label="ভয়েস কল" />
               </Grid>
               <Grid item>
-                <FormControlLabel
-                  value="video"
-                  control={<Radio />}
-                  label="Video Call"
-                />
+                <FormControlLabel value="video" control={<Radio />} label="ভিডিও কনফারেন্স" />
               </Grid>
             </Grid>
           </RadioGroup>
         </FormControl>
 
-        <Typography variant="body1">
-          Please select your convenient time for the meeting:
-        </Typography>
+        <Typography variant="body1">আপনার জন্য উপযুক্ত সাক্ষাতের সময় ঠিক করুন:</Typography>
 
         <FormControl>
           <RadioGroup value={time} onChange={handleMeetingTimeChange}>
             <Grid container>
               <Grid item>
-                <FormControlLabel
-                  value="morning"
-                  control={<Radio />}
-                  label="10AM-12PM"
-                />
+                <FormControlLabel value="morning" control={<Radio />} label="সকাল (১০টা-১২টা)" />
               </Grid>
               <Grid item>
-                <FormControlLabel
-                  value="afterNoon"
-                  control={<Radio />}
-                  label="2PM-4PM"
-                />
+                <FormControlLabel value="afterNoon" control={<Radio />} label="বিকাল (২টা-৪টা)" />
               </Grid>
             </Grid>
           </RadioGroup>

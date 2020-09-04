@@ -7,12 +7,25 @@ import CardActions from "@material-ui/core/CardActions";
 import Avatar from "@material-ui/core/Avatar";
 import { red } from "@material-ui/core/colors";
 import TextField from "@material-ui/core/TextField";
+import { colors } from "@material-ui/core";
+import Divider from "@material-ui/core/Divider";
 
 import { useForm } from "react-hook-form";
 import { useCookies } from "react-cookie";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Checkbox } from "@material-ui/core";
+
+const avatarColor = [
+  colors.red[500],
+  colors.pink[500],
+  colors.purple[500],
+  colors.blue[500],
+  colors.teal[500],
+  colors.orange[500],
+  colors.orange[500],
+  colors.brown[500],
+];
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     backgroundColor: red[500],
+    color: "white",
   },
 }));
 
@@ -67,7 +81,9 @@ const PostForm = () => {
 
   return (
     <Card className={classes.root}>
-      <CardHeader avatar={<Avatar className={classes.avatar}>R</Avatar>} title="আপনি" />
+      <CardHeader avatar={<Avatar className={classes.avatar}>আ</Avatar>} title="আপনি" />
+
+      <Divider variant="middle" />
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <CardContent>
@@ -81,9 +97,10 @@ const PostForm = () => {
             variant="outlined"
           />
         </CardContent>
-        <Checkbox name="anonymous" inputRef={register} disabled={!loggedIn} />
-        post anonymously
-        <CardActions>
+
+        <CardActions disableSpacing>
+          <Checkbox name="anonymous" inputRef={register} disabled={!loggedIn} />
+          ইউসারনেম গোপন থাকবে
           <Button type="submit" className={classes.share} disabled={!loggedIn}>
             {loggedIn ? "শেয়ার" : ""}
           </Button>

@@ -4,17 +4,7 @@ import Layout from "../components/Layout";
 import AppointmentForm from "../components/assistance/appointmentForm";
 import EnterMeeting from "../components/assistance/enterMeeting";
 
-import {
-  Grid,
-  Typography,
-  Divider,
-  makeStyles,
-  Paper,
-  Tabs,
-  Tab,
-  Box,
-  colors,
-} from "@material-ui/core";
+import { Grid, Typography, Divider, makeStyles, Paper, Tabs, Tab, Box, colors } from "@material-ui/core";
 
 const TabPanel = (props) => {
   const { children, value, index, ...other } = props;
@@ -60,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   container: {
-    marginTop: 60,
+    marginTop: 90,
     padding: 30,
     backgroundColor: "white",
   },
@@ -89,17 +79,15 @@ const Assistance = () => {
 
           <Grid item lg={8}>
             <div className={classes.container}>
-              <Typography variant="h3">Assistance Tomato</Typography>
+              <Typography variant="h3">Assistance</Typography>
 
               <Divider classes={{ root: classes.divider }} />
 
               <Typography variant="body1">
-                This impressive paella is a perfect party dish and a fun meal to
-                cook together with your guests. Add 1 cup of frozen peas along
-                with the mussels, if you like. This impressive paella is a
-                perfect party dish and a fun meal to cook together with your
-                guests. Add 1 cup of frozen peas along with the mussels, if you
-                like.
+                This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1
+                cup of frozen peas along with the mussels, if you like. This impressive paella is a perfect party dish
+                and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if
+                you like.
               </Typography>
 
               <Paper
@@ -119,8 +107,8 @@ const Assistance = () => {
                       onChange={handleChange}
                       className={classes.tabs}
                     >
-                      <Tab label="Book Appointment" {...a11yProps(0)} />
-                      <Tab label="Start Appointment" {...a11yProps(1)} />
+                      <Tab label="সাক্ষাতকার ঠিক করুন" {...a11yProps(0)} />
+                      <Tab label="যোগাযোগ শুরু করুন" {...a11yProps(1)} />
                     </Tabs>
                   </Grid>
 

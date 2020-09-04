@@ -3,7 +3,7 @@ import { Typography, Button, Grid } from "@material-ui/core";
 const AssistanceType = ({ setStep, setFormData }) => {
   return (
     <div align="center">
-      <Typography variant="h5">What do you seek?</Typography>
+      <Typography variant="h5">আপনি কি খুজছেন?</Typography>
 
       <Grid container spacing={1} style={{ marginTop: 10 }}>
         <Grid item lg={4}>
@@ -18,8 +18,7 @@ const AssistanceType = ({ setStep, setFormData }) => {
           </Button>
 
           <Typography variant="body1" style={{ marginTop: 5 }}>
-            This impressive paella is a perfect party dish and a fun meal to
-            cook together with your guests.
+            This impressive paella is a perfect party dish and a fun meal to cook together with your guests.
           </Typography>
         </Grid>
 
@@ -36,8 +35,7 @@ const AssistanceType = ({ setStep, setFormData }) => {
           </Button>
 
           <Typography variant="body1" style={{ marginTop: 5 }}>
-            This impressive paella is a perfect party dish and a fun meal to
-            cook together with your guests.
+            This impressive paella is a perfect party dish and a fun meal to cook together with your guests.
           </Typography>
         </Grid>
 
@@ -54,8 +52,7 @@ const AssistanceType = ({ setStep, setFormData }) => {
           </Button>
 
           <Typography variant="body1" style={{ marginTop: 5 }}>
-            This impressive paella is a perfect party dish and a fun meal to
-            cook together with your guests.
+            This impressive paella is a perfect party dish and a fun meal to cook together with your guests.
           </Typography>
         </Grid>
       </Grid>

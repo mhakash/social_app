@@ -65,7 +65,7 @@ const LoginForm = ({ handleClose }) => {
           <LockOutlinedIcon />
         </Avatar>
 
-        <Typography variant="h5">Log in</Typography>
+        <Typography variant="h5">লগ ইন</Typography>
 
         <form className={classes.form} onSubmit={handleSubmit(onFormSubmit)}>
           <TextField
@@ -75,7 +75,7 @@ const LoginForm = ({ handleClose }) => {
             required
             fullWidth
             name="username"
-            label="Username"
+            label="ইউসারনেম"
           />
           <TextField
             inputRef={register}
@@ -84,15 +84,15 @@ const LoginForm = ({ handleClose }) => {
             required
             fullWidth
             name="password"
-            label="Password"
+            label="পাসওয়ার্ড"
             type="password"
           />
           <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
-            Log In
+            লগইন করুন
           </Button>
           {loginError ? "Login failed" : null} <br />
           <Link href="/signup">
-            <a>Don't have an account? Sign Up</a>
+            <a>অ্যাকাউন্ট নেই? একটি আকাউন্ট খুলুন</a>
           </Link>
         </form>
       </div>

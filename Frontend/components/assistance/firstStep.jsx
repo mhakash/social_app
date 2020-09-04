@@ -1,12 +1,4 @@
-import {
-  Button,
-  Typography,
-  TextField,
-  FormControl,
-  Select,
-  MenuItem,
-  Grid,
-} from "@material-ui/core";
+import { Button, Typography, TextField, FormControl, Select, MenuItem, Grid } from "@material-ui/core";
 
 const categories = [
   "Sexual Harrassment",
@@ -30,17 +22,11 @@ const FirstStep = ({ category, description, setStep, setFormData }) => {
 
   return (
     <React.Fragment>
-      <Typography variant="h5">Step 1</Typography>
+      <Typography variant="h5">প্রথম ধাপ</Typography>
 
-      <Grid
-        container
-        alignItems="center"
-        style={{ marginTop: 10, marginBottom: 10 }}
-      >
+      <Grid container alignItems="center" style={{ marginTop: 10, marginBottom: 10 }}>
         <Grid item>
-          <Typography variant="body1">
-            Please select a category of your problem:
-          </Typography>
+          <Typography variant="body1">আপনার সমস্যাটির ধরন ঠিক করুন:</Typography>
         </Grid>
 
         <Grid item>
@@ -60,11 +46,11 @@ const FirstStep = ({ category, description, setStep, setFormData }) => {
         </Grid>
       </Grid>
 
-      <Typography variant="body1">Please describe your problem:</Typography>
+      <Typography variant="body1">সমস্যাটির সংক্ষেপ বর্ণনা দিন:</Typography>
 
       <TextField
         defaultValue={description}
-        placeholder="Write a few lines about your problem..."
+        placeholder="কয়েক লাইন লিখুন..."
         fullWidth
         multiline
         variant="outlined"
