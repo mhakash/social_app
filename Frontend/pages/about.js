@@ -4,7 +4,7 @@ import { Grid, Typography, Divider, makeStyles, colors } from "@material-ui/core
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    marginTop: 60,
+    marginTop: 70,
     padding: 30,
     backgroundColor: "white",
   },
@@ -27,7 +27,7 @@ const About = () => {
 
           <Grid item lg={8} xs={12}>
             <div className={classes.container}>
-              <Typography variant="h3">About Tomato</Typography>
+              <Typography variant="h3">আমাদের সম্পর্কে</Typography>
 
               <Divider classes={{ root: classes.divider }} />
 

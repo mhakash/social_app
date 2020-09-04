@@ -25,6 +25,7 @@ import {
   ListItemText,
   Divider,
 } from "@material-ui/core";
+
 import MenuRounded from "@material-ui/icons/MenuRounded";
 import StarBorder from "@material-ui/icons/StarBorder";
 import MuiLink from "@material-ui/core/Link";
@@ -37,6 +38,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "white",
   },
 }));
+
+function Logo() {
+  return <img src="/logo.png" alt="Logo" style={{ height: 70 }} />;
+}
 
 const Header = () => {
   const classes = useStyles();
@@ -81,9 +86,9 @@ const Header = () => {
 
   return (
     <React.Fragment>
-      <AppBar position="fixed" style={{ backgroundColor: colors.teal[500] }}>
+      <AppBar position="fixed" style={{ backgroundColor: colors.teal[800] }}>
         <Toolbar>
-          <Grid container alignItems="center" style={{ marginTop: 10, marginBottom: 10 }}>
+          <Grid container alignItems="center" style={{ marginTop: 2, marginBottom: 2 }}>
             <Grid item lg={1} xs={0}></Grid>
 
             <Hidden smUp>
@@ -94,55 +99,69 @@ const Header = () => {
               </Grid>
             </Hidden>
 
-            <Grid item lg={5} xs={8}>
-              <Hidden smDown>
-                <Link href="/">
-                  <Typography variant="h5">
-                    <MuiLink href="#" color="inherit" underline="none">
-                      প্রতিরোধ
-                    </MuiLink>
-                  </Typography>
-                </Link>
-              </Hidden>
+            <Hidden smDown>
+              <Grid container item lg={5} alignItems="center">
+                <Grid item>
+                  <Logo />
+                </Grid>
 
-              <Hidden smUp>
-                <Link href="/">
-                  <Typography align="center" variant="h5">
-                    <MuiLink href="#" color="inherit" underline="none">
-                      প্রতিরোধ
-                    </MuiLink>
-                  </Typography>
-                </Link>
-              </Hidden>
-            </Grid>
+                <Grid item>
+                  <Link href="/">
+                    <Typography variant="h5">
+                      <MuiLink href="#" color="inherit" underline="none">
+                        প্রতিরোধ
+                      </MuiLink>
+                    </Typography>
+                  </Link>
+                </Grid>
+              </Grid>
+            </Hidden>
+
+            <Hidden smUp>
+              <Grid container item xs={7} alignItems="center" justify="center">
+                <Grid item>
+                  <Logo />
+                </Grid>
+
+                <Grid item>
+                  <Link href="/">
+                    <Typography variant="h5">
+                      <MuiLink href="#" color="inherit" underline="none">
+                        প্রতিরোধ
+                      </MuiLink>
+                    </Typography>
+                  </Link>
+                </Grid>
+              </Grid>
+            </Hidden>
 
             <Hidden smDown>
               <Grid item lg={5}>
                 <Box align="right">
                   <Link href="/assistance">
-                    <Button align="right" color="inherit">
+                    <Button size="large" align="right" color="inherit">
                       সহায়তা
                     </Button>
                   </Link>
 
                   <Link href="/">
-                    <Button align="right" color="inherit">
+                    <Button size="large" align="right" color="inherit">
                       হোম
                     </Button>
                   </Link>
 
                   <Link href="/about">
-                    <Button align="right" color="inherit">
+                    <Button size="large" align="right" color="inherit">
                       অ্যাবাউট
                     </Button>
                   </Link>
 
                   {!currentUser ? (
-                    <Button align="right" color="inherit" onClick={handleClickOpen}>
+                    <Button size="large" align="right" color="inherit" onClick={handleClickOpen}>
                       লগইন
                     </Button>
                   ) : (
-                    <Button align="right" color="inherit" onClick={handleLogout}>
+                    <Button size="large" align="right" color="inherit" onClick={handleLogout}>
                       লগআউট
                     </Button>
                   )}
@@ -150,7 +169,7 @@ const Header = () => {
               </Grid>
             </Hidden>
 
-            <Grid item sm={0} xs={2}></Grid>
+            <Grid item sm={0} xs={3}></Grid>
 
             <Grid item lg={1} xs={0}></Grid>
           </Grid>

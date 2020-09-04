@@ -63,11 +63,22 @@ const avatarColor = [
 const Post = ({ post }) => {
   const classes = useStyles();
 
+  const [likes, setLikes] = React.useState(Math.floor(Math.random() * 1000));
   const [liked, setLiked] = React.useState(false);
 
   const [expanded, setExpanded] = React.useState(false);
   const { register, handleSubmit } = useForm();
   const [cookies, setCookie, removeCookie] = useCookies();
+
+  const handleLike = () => {
+    if (!liked) {
+      setLiked(true);
+      setLikes(likes + 1);
+    } else {
+      setLiked(false);
+      setLikes(likes - 1);
+    }
+  };
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -117,9 +128,11 @@ const Post = ({ post }) => {
       </CardContent>
 
       <CardActions disableSpacing>
-        <IconButton onClick={() => setLiked(true)}>
+        <IconButton onClick={handleLike}>
           {liked ? <FavoriteIcon style={{ color: red[500] }} /> : <FavoriteIcon />}
         </IconButton>
+
+        {likes}
 
         <IconButton style={{ marginLeft: "auto" }} onClick={handleExpandClick} aria-expanded={expanded}>
           <Typography variant="body2">মন্তব্যসমূহ</Typography>

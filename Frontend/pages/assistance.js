@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
     padding: 10,
   },
   container: {
-    marginTop: 90,
+    marginTop: 70,
     padding: 30,
     backgroundColor: "white",
   },
@@ -87,15 +87,14 @@ const Assistance = () => {
 
           <Grid item lg={8} xs={12}>
             <div className={classes.container}>
-              <Typography variant="h3">Assistance</Typography>
+              <Typography variant="h3">ব্যক্তিগত সহায়তা</Typography>
 
               <Divider classes={{ root: classes.divider }} />
 
               <Typography variant="body1">
-                This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1
-                cup of frozen peas along with the mussels, if you like. This impressive paella is a perfect party dish
-                and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if
-                you like.
+                আপনার সমস্যাটির এক্সপার্ট মতামতের জন্য অভিজ্ঞ ব্যাক্তির সাথে কথা বলুন। আপনি চাইলে পরিচয় গোপন রেখেই
+                পরামর্শ নিতে পারেন। যেভাবে স্বাচ্ছন্দ্য বোধ করবেন সেভাবে যোগাযোগের মাধ্যম আপনিই ঠিক করুন, -চ্যাট, -ভয়েস
+                কল, -ভিডিও কনফারেন্স
               </Typography>
 
               <Paper className={classes.formContainer}>

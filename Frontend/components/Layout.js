@@ -6,7 +6,7 @@ import { CookiesProvider } from "react-cookie";
 const Layout = (props) => (
   <React.Fragment>
     <Head>
-      <title>Harrassment</title>
+      <title>Protirodh</title>
     </Head>
 
     <CookiesProvider>

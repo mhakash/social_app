@@ -14,12 +14,12 @@ const useStyles = makeStyles({
     //zIndex: 1,
     //left: 0,
     //backgroundColor: "#eee",
-    paddingTop: 90,
+    paddingTop: 70,
     overflowY: "auto",
   },
 
   feed: {
-    paddingTop: 110,
+    paddingTop: 90,
     marginLeft: 2,
     marginRight: 2,
     ["@media (max-width:600px)"]: {
