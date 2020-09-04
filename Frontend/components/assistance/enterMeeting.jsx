@@ -24,7 +24,7 @@ const EnterMeeting = () => {
 
       <Grid item>
         <Link href="/chat">
-          <Button variant="contained" color="secondary">
+          <Button variant="contained" color="primary">
             প্রবেশ
           </Button>
         </Link>

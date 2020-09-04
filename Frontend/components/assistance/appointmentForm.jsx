@@ -92,9 +92,12 @@ class AppointmentForm extends Component {
 const CompletedStep = ({ formData }) => {
   return (
     <div>
-      <h1 align="center">Completed!</h1>
+      <h1 align="center">সম্পূর্ণ হয়েছে!</h1>
       <Typography align="center" variant="body1">
-        Your token is 234234
+        আপনার কুপন কোড: <b>234234</b>
+      </Typography>
+      <Typography align="center" variant="body1">
+        সাক্ষাতের এর সময় ২৬/০৫/২০২০ বিকাল ৪ঃ৩০ টা
       </Typography>
     </div>
   );

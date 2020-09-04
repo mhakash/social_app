@@ -18,7 +18,7 @@ const AssistanceType = ({ setStep, setFormData }) => {
           </Button>
 
           <Typography variant="body1" style={{ marginTop: 5 }}>
-            This impressive paella is a perfect party dish and a fun meal to cook together with your guests.
+            সাধারণ পরামর্শের জন্য একজন প্রতিনিধির সাথে কথা বলুন। আপনার মানসিক সমস্যাগুলো ব্যাক্ত করুন।
           </Typography>
         </Grid>
 

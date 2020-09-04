@@ -16,16 +16,32 @@ import {
   DialogContentText,
   DialogTitle,
   colors,
+  Hidden,
+  IconButton,
+  Collapse,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Divider,
 } from "@material-ui/core";
+
+import MenuRounded from "@material-ui/icons/MenuRounded";
+import StarBorder from "@material-ui/icons/StarBorder";
 import MuiLink from "@material-ui/core/Link";
 import LoginForm from "./home/loginForm";
 import Router from "next/router";
 
 const useStyles = makeStyles((theme) => ({
-  title: {
-    flexGrow: 1,
+  divider: {
+    //height: 1,
+    backgroundColor: "white",
   },
 }));
+
+function Logo() {
+  return <img src="/logo.png" alt="Logo" style={{ height: 70 }} />;
+}
 
 const Header = () => {
   const classes = useStyles();
@@ -35,6 +51,12 @@ const Header = () => {
   const [currentUser, setCurrentUser] = React.useState(null);
   const handleClickOpen = () => {
     setOpen(true);
+  };
+
+  const [drop, setDrop] = React.useState(false);
+
+  const handleMenuClick = () => {
+    setDrop(!drop);
   };
 
   React.useEffect(() => {
@@ -64,55 +86,160 @@ const Header = () => {
 
   return (
     <React.Fragment>
-      <AppBar position="fixed" style={{ backgroundColor: colors.teal[500] }}>
+      <AppBar position="fixed" style={{ backgroundColor: colors.teal[800] }}>
         <Toolbar>
-          <Grid container alignItems="center" style={{ marginTop: 20, marginBottom: 20 }}>
-            <Grid item lg={1}></Grid>
+          <Grid container alignItems="center" style={{ marginTop: 2, marginBottom: 2 }}>
+            <Grid item lg={1} xs={0}></Grid>
 
-            <Grid item lg={5}>
-              <Link href="/">
-                <Typography variant="h3" className={classes.title}>
-                  <MuiLink href="#" color="inherit" underline="none">
-                    প্রতিরোধ
-                  </MuiLink>
-                </Typography>
-              </Link>
-            </Grid>
+            <Hidden smUp>
+              <Grid item xs={2}>
+                <IconButton color="inherit" onClick={handleMenuClick}>
+                  <MenuRounded />
+                </IconButton>
+              </Grid>
+            </Hidden>
 
-            <Grid item lg={5}>
-              <Box align="right">
-                <Link href="/assistance">
-                  <Button align="right" color="inherit">
-                    সহায়তা
-                  </Button>
-                </Link>
+            <Hidden smDown>
+              <Grid container item lg={5} alignItems="center">
+                <Grid item>
+                  <Logo />
+                </Grid>
 
-                <Link href="/">
-                  <Button align="right" color="inherit">
-                    হোম
-                  </Button>
-                </Link>
+                <Grid item>
+                  <Link href="/">
+                    <Typography variant="h5">
+                      <MuiLink href="#" color="inherit" underline="none">
+                        প্রতিরোধ
+                      </MuiLink>
+                    </Typography>
+                  </Link>
+                </Grid>
+              </Grid>
+            </Hidden>
 
-                <Link href="/about">
-                  <Button align="right" color="inherit">
-                    অ্যাবাউট
-                  </Button>
-                </Link>
-                {!currentUser ? (
-                  <Button align="right" color="inherit" onClick={handleClickOpen}>
-                    লগইন
-                  </Button>
-                ) : (
-                  <Button align="right" color="inherit" onClick={handleLogout}>
-                    লগআউট
-                  </Button>
-                )}
-              </Box>
-            </Grid>
+            <Hidden smUp>
+              <Grid container item xs={7} alignItems="center" justify="center">
+                <Grid item>
+                  <Logo />
+                </Grid>
 
-            <Grid item lg={1}></Grid>
+                <Grid item>
+                  <Link href="/">
+                    <Typography variant="h5">
+                      <MuiLink href="#" color="inherit" underline="none">
+                        প্রতিরোধ
+                      </MuiLink>
+                    </Typography>
+                  </Link>
+                </Grid>
+              </Grid>
+            </Hidden>
+
+            <Hidden smDown>
+              <Grid item lg={5}>
+                <Box align="right">
+                  <Link href="/assistance">
+                    <Button size="large" align="right" color="inherit">
+                      সহায়তা
+                    </Button>
+                  </Link>
+
+                  <Link href="/">
+                    <Button size="large" align="right" color="inherit">
+                      হোম
+                    </Button>
+                  </Link>
+
+                  <Link href="/about">
+                    <Button size="large" align="right" color="inherit">
+                      অ্যাবাউট
+                    </Button>
+                  </Link>
+
+                  {!currentUser ? (
+                    <Button size="large" align="right" color="inherit" onClick={handleClickOpen}>
+                      লগইন
+                    </Button>
+                  ) : (
+                    <Button size="large" align="right" color="inherit" onClick={handleLogout}>
+                      লগআউট
+                    </Button>
+                  )}
+                </Box>
+              </Grid>
+            </Hidden>
+
+            <Grid item sm={0} xs={3}></Grid>
+
+            <Grid item lg={1} xs={0}></Grid>
           </Grid>
         </Toolbar>
+
+        <Collapse in={drop} timeout="auto" unmountOnExit>
+          <List disablePadding style={{ marginLeft: 15, marginRight: 15 }}>
+            <Divider classes={{ root: classes.divider }} />
+
+            {!currentUser ? (
+              <ListItem button color="inherit" onClick={handleClickOpen}>
+                লগইন
+              </ListItem>
+            ) : (
+              <ListItem button color="inherit" onClick={handleLogout}>
+                লগআউট
+              </ListItem>
+            )}
+
+            <Divider classes={{ root: classes.divider }} />
+
+            <Link href="/">
+              <ListItem button color="inherit">
+                হোম
+              </ListItem>
+            </Link>
+
+            <Divider classes={{ root: classes.divider }} />
+
+            <Link href="/assistance">
+              <ListItem button color="inherit">
+                সহায়তা
+              </ListItem>
+            </Link>
+
+            <Divider classes={{ root: classes.divider }} />
+
+            <Link href="/assistance">
+              <ListItem button color="inherit">
+                আপনি জানেন কি?
+              </ListItem>
+            </Link>
+
+            <Divider classes={{ root: classes.divider }} />
+
+            <Link href="/assistance">
+              <ListItem button color="inherit">
+                FAQ
+              </ListItem>
+            </Link>
+
+            <Divider classes={{ root: classes.divider }} />
+
+            <Link href="/assistance">
+              <ListItem button color="inherit">
+                আইন জানুন
+              </ListItem>
+            </Link>
+
+            <Divider classes={{ root: classes.divider }} />
+
+            <Link href="/about">
+              <ListItem button color="inherit">
+                অ্যাবাউট
+              </ListItem>
+            </Link>
+
+            <Divider classes={{ root: classes.divider }} style={{ marginBottom: 10 }} />
+          </List>
+        </Collapse>
       </AppBar>
 
       <Dialog open={open} onClose={handleClose}>

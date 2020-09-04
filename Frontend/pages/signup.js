@@ -18,19 +18,15 @@ const SignUp = () => {
     <Layout>
       <div>
         <Grid container>
-          <Grid item lg={3}>
-            {" "}
-          </Grid>
-          <Grid item lg={6}>
+          <Grid item lg={3} xs={0}></Grid>
+          <Grid item lg={6} xs={12}>
             <div className={classes.container}>
               <SignupForm />
-            </div>{" "}
+            </div>
           </Grid>
-          <Grid item lg={3}>
-            {" "}
-          </Grid>{" "}
-        </Grid>{" "}
-      </div>{" "}
+          <Grid item lg={3} xs={0}></Grid>
+        </Grid>
+      </div>
     </Layout>
   );
 };
