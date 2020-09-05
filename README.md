@@ -1,5 +1,7 @@
 # social_app
-nice app
+
+visit us at: <b>https://protirodh.vercel.app/</b>
+
 
 To run:
 
